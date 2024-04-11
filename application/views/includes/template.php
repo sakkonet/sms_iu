@@ -70,7 +70,7 @@ if (empty($this->session->userdata('id'))) {
               </a>
             </div>
             <div class="col-auto">
-              Balance <span data-bind="visible:parseFloat(balance())<parseFloat(sms_cost())" class="badge bg-danger">UGX:&nbsp;<span data-bind="text:curr_format(balance())"></span></span>
+              Total Balance: <span data-bind="visible:parseFloat(balance())<parseFloat(sms_cost())" class="badge bg-danger">UGX:&nbsp;<span data-bind="text:curr_format(balance())"></span></span>
               <span data-bind="visible:parseFloat(balance())>parseFloat(sms_cost())" class="badge bg-success">UGX:&nbsp;<span data-bind="text:curr_format(balance())"></span></span>
             </div>
 
@@ -234,7 +234,7 @@ if (empty($this->session->userdata('id'))) {
                     </svg></span>
                   <!--end::Svg Icon-->
                 </span>
-                <span class="nav-link-text">Onboard New SACCOS</span>
+                <span class="nav-link-text">Onboarded SACCOS</span>
               </a>
               <!--//nav-link-->
             </li>
@@ -391,7 +391,7 @@ if (empty($this->session->userdata('id'))) {
     $(document).ready(function() {
 
       $.ajax({
-        url: '<?php echo api_url . "/utils/creditBalance"; ?>',
+        url: '<?php echo api_url . "/utils/totalFloatBalance"; ?>',
         headers: {
           Authorization: 'Bearer ' + '<?php echo $this->session->userdata('auth_token'); ?>'
         },
@@ -404,6 +404,25 @@ if (empty($this->session->userdata('id'))) {
         },
         error: function(jqXHR, textStatus, errorThrown) {
 
+        }
+      });
+
+      $.ajax({
+        url: '<?php echo api_url . "/utils/get_total_connected_saccos"; ?>',
+        headers: {
+          Authorization: 'Bearer ' + '<?php echo $this->session->userdata('auth_token'); ?>'
+        },
+        dataType: 'json',
+        success: function(feedback) {
+          if (feedback.success) {
+            console.log("---------------------");
+            console.log(feedback.data[0].total);
+            console.log("---------------------");
+            viewModel.totalconnected(feedback.data[0].total);
+          }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          console.log(jqXHR, errorThrown);
         }
       });
     });

@@ -53,6 +53,11 @@
             self.position = ko.observable();
             self.roles = ko.observableArray(<?php echo (isset($roles)) ? json_encode($roles) : ''; ?>);
             self.role = ko.observable();
+            
+            self.totalconnected = ko.observable();
+            self.totalsenttoday = ko.observable();
+            self.totalfailedtoday = ko.observable();
+            self.depletedbundles  = ko.observable();
         };
 
         viewModel = new ViewModel();

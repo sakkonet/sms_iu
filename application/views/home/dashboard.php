@@ -15,7 +15,7 @@
                         </div>
                         <!--//col-->
                         <div class="col-auto">
-                            <h4 class="app-card-title">0</h4>
+                            <h4 class="app-card-title"><span data-bind="text:curr_format(totalconnected())"></span></h4>
                         </div>
                         <!--//col-->
                     </div>
@@ -145,7 +145,7 @@
                 </span>
                 <a class="app-card-link-mask" href="<?php echo base_url('users'); ?>"></a>
             </div>
-            <div class="text-center fs-5 fw-bold">ONBOARD NEW SACCOS</div>
+            <div class="text-center fs-5 fw-bold">ONBOARD NEW SACCO</div>
         </div>
     </div>
 
@@ -159,6 +159,10 @@
             var self = this;
             self.balance = ko.observable(0);
             self.sms_cost = ko.observable(0);
+            self.totalconnected = ko.observable();
+            self.totalsenttoday = ko.observable();
+            self.totalfailedtoday = ko.observable();
+            self.depletedbundles  = ko.observable();
         };
         viewModel = new ViewModel();
         ko.applyBindings(viewModel);

@@ -13,12 +13,12 @@
                             <form class="auth-form login-form" id="send-sms">
                                 <div class=" mb-3">
                                     <label class="fw-bold">Enter Number(s)</label>
-                                    <textarea style="height:80px;box-shadow: 0 0 1px #719ECE;" name="recipients" id="recipients" class=" form-control" placeholder="Enter numbers separated by commas.  e.g 0772988899,0755334223" required="required">0775959489</textarea>
+                                    <textarea style="height:80px;box-shadow: 0 0 1px #719ECE;" name="recipients" id="recipients" class=" form-control" placeholder="Enter numbers separated by commas.  e.g 0772988899,0755334223" required="required"></textarea>
                                 </div>
                                 <!--//form-group-->
                                 <div class="mb-3">
                                     <label class="fw-bold">Text Message</label>
-                                    <textarea id="message" onkeyup="countChar(this)" style="height:100px;box-shadow: 0 0 1px #719ECE;" rows="5" cols="50" name="message" class="form-control " placeholder="Your Message......... Max 160 characters" required="required">Dear Ajuna, Deposit on A/C xxxx673, amt: 20,000/=, Today: <?php echo date('Y-m-d H:i:s'); ?> . Balance:1,893,000/= Thank You!</textarea></textarea>
+                                    <textarea id="message" onkeyup="countChar(this)" style="height:100px;box-shadow: 0 0 1px #719ECE;" rows="5" cols="50" name="message" class="form-control " placeholder="Your Message......... Max 160 characters" required="required"></textarea></textarea>
                                     <div class="float-end" id="charNum"></div>
                                 </div>
                                 <!--//form-group-->

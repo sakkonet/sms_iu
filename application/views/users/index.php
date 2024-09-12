@@ -25,6 +25,7 @@
         <table class="table-sm table-hover display compact nowrap table app-table-hover mb-0 text-left" id="tblUsers" width="100%">
           <thead>
             <tr>
+              <th>#</th>
               <th>Full Name</th>
               <th>Type</th>
               <th>Email</th>
@@ -100,7 +101,11 @@
           //d.created_by = 1;
         }
       },
-      columns: [{
+      columns: [
+        {
+          render: (data, type, row, meta) => (meta.row+1)
+        },
+        {
           "data": 'user_type_id',
           render: function(data, type, full, meta) {
             if (parseInt(data) == 1) {

@@ -41,7 +41,7 @@
                         </div>
                         <!--//col-->
                         <div class="col-auto">
-                            <h4 class="app-card-title">100,000</h4>
+                            <h4 class="app-card-title"><span data-bind="text:curr_format(totalsenttoday())"></span></h4>
                         </div>
                         <!--//col-->
                     </div>
@@ -68,7 +68,7 @@
                         </div>
                         <!--//col-->
                         <div class="col-auto">
-                            <h4 class="app-card-title">0</h4>
+                            <h4 class="app-card-title"><span data-bind="text:curr_format(totalfailedtoday())"></span></h4>
                         </div>
                         <!--//col-->
                     </div>
@@ -95,7 +95,7 @@
                         </div>
                         <!--//col-->
                         <div class="col-auto">
-                            <h4 class="app-card-title">0</h4>
+                            <h4 class="app-card-title"><span data-bind="text:curr_format(depletedbundles())"></span></h4>
                         </div>
                         <!--//col-->
                     </div>
@@ -159,10 +159,10 @@
             var self = this;
             self.balance = ko.observable(0);
             self.sms_cost = ko.observable(0);
-            self.totalconnected = ko.observable();
-            self.totalsenttoday = ko.observable();
-            self.totalfailedtoday = ko.observable();
-            self.depletedbundles  = ko.observable();
+            self.totalconnected = ko.observable(0);
+            self.totalsenttoday = ko.observable(0);
+            self.totalfailedtoday = ko.observable(0);
+            self.depletedbundles  = ko.observable(0);
         };
         viewModel = new ViewModel();
         ko.applyBindings(viewModel);

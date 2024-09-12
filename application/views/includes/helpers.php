@@ -141,6 +141,50 @@
             });
         }
 
+        $(".customDatepicker").datepicker({
+        dateFormat: "dd-M-yy",
+        duration: "fast",
+        autoclose: true,
+        showMonthAfterYear: true,
+        yearRange: "2021:" + new Date().getFullYear(),
+        changeMonth: true,
+        changeYear: true,
+        beforeShow: function () {
+            setTimeout(function () {
+                $('.ui-datepicker').css('z-index', 99999999999999);
+            }, 0);
+        }
+    });
+    $(".customDatepickerDefaultDate").datepicker({
+        dateFormat: "dd-M-yy",
+        duration: "fast",
+        autoclose: true,
+        showMonthAfterYear: true,
+        yearRange: "2021:" + new Date().getFullYear(),
+        changeMonth: true,
+        changeYear: true,
+        beforeShow: function () {
+            setTimeout(function () {
+                $('.ui-datepicker').css('z-index', 99999999999999);
+            }, 0);
+        }
+    }).datepicker("setDate", new Date());
+
+    $(".customStartDatepickerLoans").datepicker({
+        dateFormat: "dd-M-yy",
+        duration: "fast",
+        autoclose: true,
+        showMonthAfterYear: true,
+        yearRange: "2021:" + new Date().getFullYear(),
+        changeMonth: true,
+        changeYear: true,
+        beforeShow: function () {
+            setTimeout(function () {
+                $('.ui-datepicker').css('z-index', 99999999999999);
+            }, 0);
+        }
+    }).datepicker("setDate", -365);
+
     }); //End of the document is ready operations
     //function to clear the forms
     function clear_forms(forms) {
